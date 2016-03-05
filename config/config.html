@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <title>Configuration Page</title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="../libs/createjs/easeljs-0.6.1.min.js" type="text/javascript"></script>
+    <script src="../libs/createjs/tweenjs-0.4.1.min.js" type="text/javascript"></script>
+    <script src="../libs/raphael/raphael-min.js" type="text/javascript"></script>
+    <script src="../libs/textfx/Text.js" type="text/javascript"></script>
+    <script src="../libs/textfx/svg/SVG.js" type="text/javascript"></script>
+    <script src="../libs/textfx/svg/SVGText.js" type="text/javascript"></script>
+    <script src="../libs/textfx/svg/SVGTextBlock.js" type="text/javascript"></script>
+    <script src="../libs/textfx/css/CSS.js" type="text/javascript"></script>
+    <script src="../libs/textfx/css/CSSText.js" type="text/javascript"></script>
+    <script src="../libs/textfx/css/CSSTextBlock.js" type="text/javascript"></script>
+    <script src="../libs/textfx/canvas/Canvas.js" type="text/javascript"></script>
+    <script src="../libs/textfx/canvas/CanvasText.js" type="text/javascript"></script>
+    <script src="../libs/textfx/canvas/CanvasTextBlock.js" type="text/javascript"></script>
+
+    <script src="http://use.edgefonts.net/carter-one.js"></script>
+    <script src="http://use.edgefonts.net/chango.js"></script>
+    <script src="http://use.edgefonts.net/cutive.js"></script>
+    <script src="http://use.edgefonts.net/damion.js"></script>
+    <script src="http://use.edgefonts.net/droid-sans-mono.js"></script>
+    <script src="http://use.edgefonts.net/love-ya-like-a-sister.js"></script>
+    <script src="http://use.edgefonts.net/podkova.js"></script>
+    <script src="http://use.edgefonts.net/sarina.js"></script>
+    <script src="http://use.edgefonts.net/stint-ultra-expanded.js"></script>
+
+    <link href="config.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div id="text-svg"></div>
+<div id="text-css"></div>
+<div id="text-canvas"></div>
+
+<div id="header-background" class="gradient">
+    <div id="text-column">
+        <div id="text-wrapper">
+
+            <div id="text-banner"></div>
+
+            <div class="text-options">
+                <table>
+                    <tr>
+                        <td width="85">Text:</td>
+                        <td colspan="3">
+                            <input id="text-input" autofocus placeholder="Add your text here..." class="input-large" type="text" value=""/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-options">
+                <table>
+                    <tr>
+                        <td width="85">Type:</td>
+                        <td width="220">
+                            <select id = "type">
+                                <option value = "SVG">SVG</option>
+                                <option value = "CSS">CSS3</option>
+                                <option value = "Canvas">HTML5 Canvas</option>
+                            </select>
+                        </td>
+                        <td width="85">Effect:</td>
+                        <td>
+                            <select id = "effect">
+                                <option value = "zoomBig">zoomBig</option>
+                                <option value = "zoomSmall">zoomSmall</option>
+                                <option value = "slideTop">slideTop</option>
+                                <option value = "slideBottom">slideBottom</option>
+                                <option value = "slideLeft">slideLeft</option>
+                                <option value = "slideRight">slideRight</option>
+                                <option value = "rotate">rotate</option>
+                                <option value = "rotateBig">rotateBig</option>
+                                <option value = "rotateSmall">rotateSmall</option>
+                                <option value = "rotateTop">rotateTop</option>
+                                <option value = "rotateBottom">rotateBottom</option>
+                                <option value = "rotateLeft">rotateLeft</option>
+                                <option value = "rotateRight">rotateRight</option>
+                                <option value = "flipX">flipX</option>
+                                <option value = "flipY">flipY</option>
+                                <option value = "fade">fade</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="85">Animate:</td>
+                        <td width="220">
+                            <select id = "animate">
+                                <option value = "letters">Letters</option>
+                                <option value = "words">Words</option>
+                                <option value = "lines">Lines</option>
+                            </select>
+                        </td>
+                        <td width="85">Easing:</td>
+                        <td>
+                            <select id = "easing">
+                                <option value = "linear">Linear</option>
+                                <option value = "easeIn">Ease In</option>
+                                <option value = "easeOut">Ease Out</option>
+                                <option value = "easeInOut">Ease In Out</option>
+                                <option selected="true" value = "backIn">Back In</option>
+                                <option value = "backOut">Back Out</option>
+                                <option value = "elastic">Elastic (SVG / Canvas)</option>
+                                <option value = "bounce">Bounce (SVG / Canvas)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="85">Delay:</td>
+                        <td width="220">
+                            ms
+                       </td>
+                        <td width="85">Duration:</td>
+                        <td>
+                            <input id="duration" class="input-small" type="text" value="550"/> ms
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-options">
+                <table>
+                    <tr>
+                        <td width="85">Font:</td>
+                        <td width="220">
+                            <select id = "font">
+                                <option value = "carter-one">Carter One</option>
+                                <option value = "chango">Chango</option>
+                                <option selected="true" value = "cutive">Cutive</option>
+                                <option value = "droid-sans-mono">Droid Sans Mono</option>
+                                <option value = "damion">Damion</option>
+                                <option value = "love-ya-like-a-sister">Love Ya Like A Sister</option>
+                                <option value = "podkova">Podkova</option>
+                                <option value = "sarina">Sarina</option>
+                                <option value = "stint-ultra-expanded">Stint Ultra Expanded</option>
+                            </select>
+                        </td>
+                        <td width="120">Letter Spacing:</td>
+                        <td>
+                        <input id="letterspacing" class="input-small" type="text" value="0"/> px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="85">Color:</td>
+                        <td>
+                            <select id = "fontcolor">
+                                <option value = "#000">Black</option>
+                                <option value = "#666">Gray</option>
+                                <option value = "#CCC">Light Gray</option>
+                                <option value = "#FFF">White</option>
+                                <option value = "#00D699">Green</option>
+                                <option selected="true" value = "#4DA6FF">Blue</option>
+                                <option value = "none">None</option>
+                            </select>
+                        </td>
+                        <td>Word Spacing:</td>
+                        <td>
+                            <input id="wordspacing" class="input-small" type="text" value="25"/> px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Size:</td>
+                        <td>
+                            <input id="fontsize" class="input-small" type="text" value="75"/> pt
+                        </td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-options">
+                <table>
+                    <tr>
+                        <td width="85">Outline:</td>
+                        <td  width="220">
+                            <select id = "border">
+                                <option value = "#000">Black</option>
+                                <option value = "#666">Gray</option>
+                                <option selected="true" value = "#CCC">Light Gray</option>
+                                <option value = "#FFF">White</option>
+                                <option value = "#00D699">Green</option>
+                                <option value = "#4DA6FF">Blue</option>
+                                <option value = "none">None</option>
+                            </select></td>
+                        <td width="85">Size:</td>
+                        <td >
+                            <input id="bordersize" class="input-small" type="text" value="2"/> px  (SVG only)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="vspacer">
+            <a class="butt btn-big" id="play">Play Animation</a>
+            <a class="butt btn-big" id="copy">Copy to Clipboard</a>
+        </div>
+        <div id="instructions" class="vspacer">Configure the parameters and tap the text to see the animation.</div>
+    </div>
+</div>
+
+<div id="copy-params">
+    <div id="copy-form">
+        <p class="lighttext">Copy to Clipboard:</p>
+        <textarea id="copy-field" cols="70" rows="18"></textarea><br>
+        <a class="butt btn-big" id="done">Done</a>
+    </div>
+    <div id="copy-background"></div>
+</div>
+
+<script src="config.js"></script>
+
+</body>
+</html>
