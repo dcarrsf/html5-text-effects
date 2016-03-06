@@ -11,9 +11,26 @@ I started with SVG leveraging the RaphaelJS library for support. SVG by far has 
 ```javascript
   var canvas = Text.SVG("canvas"); // div id
   var text = canvas.addText("Typography", {
-    //...
+        fontStyles: {
+            'font-family': 'cutive, sans-serif',
+            'font-size': 72,
+            'color': 'gray',
+            'opacity': 0.5,
+            'stroke': 'lightgray',
+            'stroke-width': 0
+        },
+        letterSpacing: 0,
+        wordSpacing: 25,
+        lineSpacing: -30,
+        wordAlign: 'center',
+        alignX: 'center',
+        alignY: 'center',
+        easing: 'backIn',
+        duration: 550,
+        delay: 50,
+        type: 'letters'
   });
-  text.animate("zoomInBig");
+  text.animate("zoomBigIn");
 ```
 **CSS**
 
@@ -21,8 +38,14 @@ Next, I tried working with CSS animations. CSS animations manipulate text in the
 ```javascript
   var canvas = Text.CSS("canvas"); // div id
   var text = canvas.addText("Typography", {
-    //...
+        fontStyles: {
+            'font-family': 'cutive, sans-serif',
+            'font-size': 72,
+            'color': 'gray'
+        },
+        type: 'words'
   });
+  text.animate('zoomBigOut');
 ```
 **HTML Canvas**
 
@@ -30,8 +53,23 @@ And finally, I setup the animation API on the canvas using CreateJS for support.
 ```javascript
   var canvas = Text.Canvas("canvas"); // canvas id
   var text = canvas.addText("Typography", {
-    //...
+        fontStyles: {
+            'font-family': 'cutive, sans-serif',
+            'font-size': 72
+        },
+        type: 'letters'
   });
+  
+  // Toggle animation
+  var direction = true;
+  $(window).on('click', function(){
+    direction = !direction;
+    if( direction ){
+          text.animate('zoomBigIn');
+      }else{
+          text.animate('zoomBigOut');
+      }
+    });
 ```
 **Known Issues**
 
