@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>Template Page</title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="libs/createjs/easeljs-0.6.1.min.js" type="text/javascript"></script>
+    <script src="libs/createjs/tweenjs-0.4.1.min.js" type="text/javascript"></script>
+    <script src="libs/raphael/raphael-min.js" type="text/javascript"></script>
+    <script src="libs/textfx/Text.js" type="text/javascript"></script>
+    <script src="libs/textfx/svg/SVG.js" type="text/javascript"></script>
+    <script src="libs/textfx/svg/SVGText.js" type="text/javascript"></script>
+    <script src="libs/textfx/svg/SVGTextBlock.js" type="text/javascript"></script>
+    <script src="libs/textfx/css/CSS.js" type="text/javascript"></script>
+    <script src="libs/textfx/css/CSSText.js" type="text/javascript"></script>
+    <script src="libs/textfx/css/CSSTextBlock.js" type="text/javascript"></script>
+    <script src="libs/textfx/canvas/Canvas.js" type="text/javascript"></script>
+    <script src="libs/textfx/canvas/CanvasText.js" type="text/javascript"></script>
+    <script src="libs/textfx/canvas/CanvasTextBlock.js" type="text/javascript"></script>
+
+    <!-- Add Adobe Web Font script tags here -->
+    <script>var __adobewebfontsappname__ = "code"</script>
+    <script src="http://use.edgefonts.net/cutive:n4:all.js"></script>
+
+    <link href="css/template.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="canvas"></div>
+
+<script>
+
+    // Add configuration code here...
+    var params = {
+        fontStyles: {
+            'font-family': 'cutive, sans-serif',
+            'font-size': 72,
+            'color': 'gray',
+            'opacity': 0.5,
+            'stroke': 'lightgray',
+            'stroke-width': 0
+        },
+        letterSpacing: 0,
+        wordSpacing: 25,
+        lineSpacing: -30,
+        wordAlign: 'center',
+        alignX: 'center',
+        alignY: 'center',
+        easing: 'backIn',
+        duration: 550,
+        delay: 50,
+        type: 'letters'
+    };
+
+    var canvas = new Text.Canvas('canvas');
+    var text = canvas.addText('Typography', params);
+
+    var direction = true;
+    $(window).on('click', function(){
+
+        direction = !direction;
+
+        if( direction ){
+            text.animate('zoomBigIn');
+        }else{
+            text.animate('zoomBigOut');
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
