@@ -3,7 +3,7 @@ Text Effects API with HTML5 Canvas, CSS, and SVG
 
 Simple JavaScript API designed to render and compare text effects generated with HTML5 canvas, CSS, and SVG. This project was originally created while working on HTML5 projects with Adobe. The goal was to create web standard animated effects, similar to what we might create in Flash (letter by letter, word by word, and so on). The question was, how to do it and make it work across devices? 
 
-To address the problem, I create a JavaScript API that works across media types.
+To address the problem, I created a JavaScript API that works across media types.
 
 **SVG**
 
