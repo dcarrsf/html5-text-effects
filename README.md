@@ -9,8 +9,7 @@ To address the problem, I created a JavaScript API that works across media types
 
 I started with SVG leveraging the RaphaelJS library for support. SVG by far has the most configuration options, and renders smoothly on desktop and devices with enough power. Raphael animations are rendered as vectors within the SVG element, so the quality is very impressive. Definitely a great option for desktop.
 ```javascript
-  var canvas = Text.SVG("canvas"); // div id
-  var text = canvas.addText("Typography", {
+  var params = {
         fontStyles: {
             'font-family': 'cutive, sans-serif',
             'font-size': 72,
@@ -29,8 +28,10 @@ I started with SVG leveraging the RaphaelJS library for support. SVG by far has 
         duration: 550,
         delay: 50,
         type: 'letters'
-  });
-  text.animate("zoomBigIn");
+  };
+  var canvas = Text.SVG("canvas"); // div id
+  var text = canvas.addText("Typography", params);
+      text.animate("rotateBigIn");
 ```
 **CSS**
 
